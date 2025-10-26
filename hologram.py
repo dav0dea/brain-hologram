@@ -12,6 +12,7 @@ FMIN = 4
 FMAX = 30
 NFREQ = 26
 SPEC_METHOD = "morlet"  # or "multitaper"
+RESOLUTION = 40  # reduce to speed up computation
 
 paths = eegbci.load_data(1, [1, 2])
 raw: mne.io.Raw = mne.concatenate_raws([read_raw(p, preload=True) for p in paths])
@@ -54,6 +55,6 @@ def hologram(tfr, max_steps: int = -1, resolution: int = 40, scale_low: float = 
     return voxels, xyz_ch_pos
 
 
-voxels, ch_pos = hologram(tfr)
+voxels, ch_pos = hologram(tfr, resolution=RESOLUTION)
 np.save("voxels.npy", voxels)
 np.save("ch_pos.npy", ch_pos)

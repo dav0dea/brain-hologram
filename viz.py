@@ -8,7 +8,7 @@ from video_recorder import VideoRecorder
 
 RECORD = False
 ROTATION_SPEED = 2
-GAMMA = 4
+GAMMA = 5
 RAY_MARCHING_STEP_SIZE = 1
 COLORMAP = "magma"
 SHOW_ELECTRODES = True
