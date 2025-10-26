@@ -1,0 +1,5 @@
+numpy
+tqdm
+mne
+vispy
+jax[cuda12]
